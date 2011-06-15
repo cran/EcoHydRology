@@ -1,7 +1,7 @@
 Package: EcoHydRology
 Type: Package
-Title: Principle equations used in Eco-Hydrology.
-Version: 0.3.7
+Title: A community modeling foundation for Eco-Hydrology.
+Version: 0.3.8
 Date: 2011-06-15
 Author: Fuka, DR, Walter, MT, and Easton, ZM
 Maintainer: Daniel Fuka <drf28@cornell.edu>
@@ -12,6 +12,6 @@ Description: This package provides a flexible foundation for
         eco-hydrological interactions.
 License: GPL-2
 LazyLoad: yes
-Packaged: 2011-06-15 19:08:36 UTC; dan
+Packaged: 2011-06-19 21:51:09 UTC; dan
 Repository: CRAN
-Date/Publication: 2011-06-17 06:44:23
+Date/Publication: 2011-06-20 06:36:49
