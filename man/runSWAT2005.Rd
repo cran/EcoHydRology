@@ -10,20 +10,8 @@ This function runs the SWAT2005 executable in the current directory.
 \usage{
 runSWAT2005()
 }
-\details{
-}
-\value{
-}
-\references{
-}
 \author{
 Daniel R. Fuka
-}
-\note{
-}
-
-
-\seealso{
 }
 \examples{
 
@@ -34,7 +22,3 @@ library.dynam("rswat","EcoHydRology")
 .Fortran("swat2005",1)
   }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

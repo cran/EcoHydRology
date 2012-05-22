@@ -1,14 +1,11 @@
-      subroutine swat2005(intrflag)
-!!      include 'modparm.f'
-!!      program main
+      program main
+!!    ~ ~ ~ PURPOSE ~ ~ ~
 !!    this is the main program that reads input, calls the main simulation
-!!    model, and writes output.
-!!    comment changes to test merging with trunk and c:\branch_test code
-!!    two lines added to c:\branch_test code
+!!    model, and writes output
 
 !!    ~ ~ ~ INCOMING VARIABLES ~ ~ ~
 !!    name        |units         |definition
-!!         ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+!!    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
 !!    date        |NA            |date simulation is performed where leftmost
 !!                               |eight characters are set to a value of
 !!                               |yyyymmdd, where yyyy is the year, mm is the 
@@ -56,10 +53,9 @@
 
       use parm
       implicit none
-      integer intrflag
       prog = "SWAT  Sept '05 VERSION2005"
-      open(9999,file='stdio.out')
-      write (9999,1000)
+
+      write (*,1000)
  1000 format(1x,"               SWAT2005               ",/,             &
      &          "      Soil & Water Assessment Tool    ",/,             &
 !     &          "              UNIX Version            ",/,             &
@@ -67,8 +63,7 @@
      &          " Program reading from file.cio . . . executing",/)
 
 !! process input
-            
-
+		
 
       call getallo
       call allocate_parms
@@ -76,7 +71,7 @@
       call readbsn
       call readwwq
       if (fcstyr > 0 .and. fcstday > 0) call readfcst
-      call readplant             !! read in the landuse/landcover database
+      call readplant              !! read in the landuse/landcover database
       call readtill              !! read in the tillage database
       call readpest              !! read in the pesticide database
       call readfert              !! read in the fertilizer/nutrient database
@@ -88,10 +83,6 @@
       call std2
       call openwth
       call headout
-
-      if (isproj == 2) then 
-        hi_targ = 0.0
-      end if
 
 !! save initial values
       if (isproj == 1) then
@@ -122,17 +113,11 @@
       do i = 1, 9
         close (i)
       end do
-      write (9999,1001)
+      write (*,1001)
  1001 format (/," Execution successfully completed ")
+	
 
         iscen=1
         if (iclb > 0) call automet
-      call closefiles
-      call deallocate_parms
-!!      call rchkusr()
-!!      call intpr ("SWAT Run Successful", 19, intrflag, 1)
-      return
-!!      end subroutine
-      stop
+	stop
       end
-

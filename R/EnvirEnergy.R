@@ -1,5 +1,5 @@
 EnvirEnergy <-
-function(lat,Jday,Tx,Tn,wind,relativehumidity,cloudiness,albedo,forest,slope,aspect,surftemp,surfemissivity,rain){
+function(lat,Jday,Tx,Tn,wind,rain,relativehumidity,albedo=0.2,cloudiness=NULL,forest=0,slope=0,aspect=0,surftemp=(Tx+Tn)/2,surfemissivity=0.97){
 # the total energy exchange between the surface and the surrounding air
 
 #lat: latitdue [rad]
@@ -8,7 +8,7 @@ function(lat,Jday,Tx,Tn,wind,relativehumidity,cloudiness,albedo,forest,slope,asp
 #Tn: minimum daily temperature [C]
 #wind: average daily windspeed [m/s]
 #relativehumidity: relative humidity; if negative, air vapor density will be approximated [-]
-#cloudiness: fraction of the sky covered in clouds,if negative, cloudiness will be approximated [-]
+#cloudiness: fraction of the sky covered in clouds. If not provided, cloudiness will be approximated [-]
 #albedo: surface albedo or reflectivity [-]
 #forest: forest or vegeation cover [-]
 #slope: slope of the ground [rad]
@@ -17,7 +17,7 @@ function(lat,Jday,Tx,Tn,wind,relativehumidity,cloudiness,albedo,forest,slope,asp
 #surfemissivity: [-]
 #rain: precipitation [mm/day]
 
-if(cloudiness<0){cloudiness<-EstCloudiness(lat,Jday,Tx,Tn)}
+if(is.null(cloudiness)){cloudiness<-EstCloudiness(Tx,Tn)}
 
 airtemp<-(Tx+Tn)/2 #average daily air temperature [C]
 

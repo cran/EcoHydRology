@@ -31,31 +31,12 @@ Saturated water content, approximately equal to the porosity of a soil (fraction
 %%     ~~Describe \code{porosity} here~~
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-Produces a value for S in the CN equation for any given day, based on the soil moisture of that day. 
-The resulting units will be the same as for S_avg 
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{
 Josephine Archibald
-%%  ~~who you are~~
 }
 \note{
 This equation is not the same as the one used in SWAT.  It was given to Dr. Todd Walter by Dr. Keith E. Saxton
-%%  ~~further notes~~
 }
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 SoilStorageSWAT
@@ -74,7 +55,3 @@ w1<-log(1-field.capacity/(1-0.4348*S.avg/(2.381*S.avg))-field.capacity)+w2*field
 return(2.381*S.avg*(1-(soil.water.content/(soil.water.content+exp(w1-w2*soil.water.content)))))
   }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

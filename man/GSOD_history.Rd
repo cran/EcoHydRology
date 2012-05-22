@@ -29,12 +29,8 @@ stations listed in this station history.
     \item{\code{END}}{a numeric vector}
   }
 }
-\details{
-}
 \source{
 ftp://ftp.ncdc.noaa.gov/pub/data/gsod/ish-history.csv
-}
-\references{
 }
 \examples{
 data(GSOD_history)

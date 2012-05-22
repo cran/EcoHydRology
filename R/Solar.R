@@ -11,6 +11,6 @@ function(lat,Jday,Tx,Tn,albedo,forest,slope,aspect){
 #slope: slope of the ground [rad]
 #aspect: ground aspect [rad from north]
 
-return((1-albedo)*(1-forest)*transmissivity(lat,Jday,Tx,Tn)*PotentialSolar(lat,Jday)*slopefactor(lat,Jday,slope,aspect))
+return((1-albedo)*(1-forest)*transmissivity(Tx,Tn)*PotentialSolar(lat,Jday)*slopefactor(lat,Jday,slope,aspect))
 }
 

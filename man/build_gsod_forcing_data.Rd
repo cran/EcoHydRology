@@ -9,21 +9,8 @@ Parsing of the gzipped GSOD forcing data as returned from get_gsod_stn()
 \usage{
 build_gsod_forcing_data()
 }
-\details{
-}
-\value{
-%%  \item{comp1 }{Description of 'comp1'}
-\item{tmp_ppt}{The temperature and precipitation extracted from gsod gzipped file ex. 634500-99999-1990.op.gz}
-}
-\references{
-}
 \author{
 Daniel R. Fuka
-}
-\note{
-}
-
-\seealso{
 }
 \examples{
 #
@@ -77,7 +64,3 @@ function(){
   return(forcing)
   }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

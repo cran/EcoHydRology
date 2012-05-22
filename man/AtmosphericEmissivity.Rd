@@ -19,9 +19,6 @@ Air temperature: air temperature [C]
 Cloudiness: fraction of the sky covered in clouds [-]
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{
 The emissivity of the atmsophere [-]
 }
@@ -34,15 +31,7 @@ p. 286.
 \author{
 Fuka, D.R., Walter, M.T.
 }
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 
 temp=15

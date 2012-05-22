@@ -86,17 +86,7 @@ List of 74
  $ tmp1.tmp     : chr [1:14248] "Tmp" "Lati Not Used" "Long Not Used" "Elev          778" ...
  $ urban.dat    : chr [1:18] "  1 URHD                                Residential-High Density   0.600   0.440" "       0.240   0.180 225.000   0.750 550.000 223.000   7.200  98.0" "  2 URMD                              Residential-Medium Density   0.380   0.300" "       0.240   0.180 225.000   0.750 550.000 223.000   7.200  98.0" ...
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
-}
-\references{
-%%  ~~ possibly secondary sources and usages ~~
-}
 \examples{
 data(swat_general)
 ## maybe str(swat_general) ; plot(swat_general) ...
 }
-\keyword{datasets}

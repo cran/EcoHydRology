@@ -11,20 +11,8 @@ for which the data is available.
 \usage{
 get_gsod_stn()
 }
-\details{
-}
-\value{
-}
-\references{
-}
 \author{
-%%  ~~who you are~~
 Daniel R. Fuka
-}
-\note{
-}
-
-\seealso{
 }
 \examples{
 # Example of downloading data for ADDIS ABABA
@@ -94,5 +82,3 @@ function(){
 
   }
 }
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

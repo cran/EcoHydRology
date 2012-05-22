@@ -23,15 +23,6 @@ Example dataframe of parameters, ranges, and search strings for optimizing swat2
   }
 }
 
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
-}
-\references{
-%%  ~~ possibly secondary sources and usages ~~
-}
 \examples{
 data(change_params)
 ## maybe str(change_params) ; plot(change_params) ...

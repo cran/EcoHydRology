@@ -16,20 +16,8 @@ readSWAT(outfile_type)
  outfile_type ie. "sub","rch","etc"
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-}
-\references{
-}
 \author{
 Daniel R. Fuka
-}
-\note{
-}
-
-\seealso{
 }
 \examples{
 ## The function is currently defined as
@@ -51,7 +39,3 @@ if (outfile=="sub"){
   return(outdata)
   }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
