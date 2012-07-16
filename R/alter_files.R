@@ -1,6 +1,7 @@
 alter_files <-
 function(change_params){
 library(operators)
+filetype=NULL
 for(ft in unique(change_params$filetype)){
         print(ft)
         files=list.files(,paste(ft,"$",sep=""))

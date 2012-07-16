@@ -1,5 +1,9 @@
 get_gsod_stn <-
 function(){
+  USAF=NULL
+  END=NULL
+  BEGIN=NULL
+  GSOD_history=NULL
   data(GSOD_history)
   tmpdir=readline("Please enter a temp directory to store the datafiles in, remember this directory when parsing with build_gsod_forcing_data()? \n")
   dir.create(tmpdir)

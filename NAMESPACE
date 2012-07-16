@@ -8,5 +8,6 @@ exportPattern(".")
 import(
   operators,
   topmodel,
-  DEoptim
+  DEoptim,
+  XML
 )
