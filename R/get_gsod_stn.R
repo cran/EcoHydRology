@@ -3,8 +3,9 @@ function(){
   USAF=NULL
   END=NULL
   BEGIN=NULL
-  GSOD_history=NULL
-  data(GSOD_history)
+  GSOD_history=""
+  load(paste(path.package("EcoHydRology"), "data/GSOD_history.rda", sep = "/"))
+#  data(GSOD_history,package="EcoHydRology")
   tmpdir=readline("Please enter a temp directory to store the datafiles in, remember this directory when parsing with build_gsod_forcing_data()? \n")
   dir.create(tmpdir)
   stnlist=GSOD_history
