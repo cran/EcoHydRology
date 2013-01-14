@@ -3,7 +3,9 @@ transmissivity<-function(Tx,Tn, A=0.75, C=2.4, opt="1day", JD=NULL){
 # the atmosphere based on the Bristow-Campbell eqn
 	#Tx: maximum daily temperature [C]
 	#Tn: minimum daily temperature [C]
-	if (any(Tx<Tn)) print("Warning, Tx must be larger than Tn")
+	if (any(Tx<Tn)) {print("Warning, Tn larger than Tx and generated NAs in the following rows:") 
+		print(which(Tx<Tn))
+		}
 	len<-length(Tx)
 	dT <- (Tx-Tn)  # diurnal temperature range just difference between max and min daily temperature
 	avDeltaT<-vector(length=len)

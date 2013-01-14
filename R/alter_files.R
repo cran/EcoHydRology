@@ -29,7 +29,7 @@ for(ft in unique(change_params$filetype)){
                                       if(alter_type=="percent"){
 				          fwrite_tmp[j]=sprintf(fwformat[min(j,length(fwformat))],fread_tmp[,j]*current)
                                       } else {
-                                          fwrite_tmp[j]=sprintf(fwformat[min(j,length(fwformat))],as.real(current))
+                                          fwrite_tmp[j]=sprintf(fwformat[min(j,length(fwformat))],as.numeric(current))
                                       } 
                                    } else {
                                       fwrite_tmp[j]=sprintf(fwformat[j],fread_tmp[,j])

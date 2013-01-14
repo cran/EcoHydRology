@@ -13,7 +13,7 @@ SnowMelt(Date, precip_mm, Tmax_C, Tmin_C, lat_deg, slope = 0, aspect = 0, tempHt
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{Date}{
-Vector of dates in this format: "%Y-%m-%d"
+Vector of dates (class Date or character) in this format: "/%Y-/%m-/%d"
 }
   \item{precip_mm}{
 Precipitation in mm
@@ -55,6 +55,10 @@ Forest cover - use this only when determining snowmelt under a canopy (-)
 The depth of the snow pack initially (m)
 }
 }
+\value{
+This will return an 8 column data frame with nrow = length of input streamflow data.  Column names are :
+Date, MaxT_C, MinT_C, Rain_mm, SnowfallWatEq_mm, SnowMelt_mm, NewSnow_m, SnowDepth_m 
+}
 \references{
 Walter, M.T. , E.S. Brooks, D.K. McCool, L.G. King, M. Molnau, J. Boll. 2005. 
 Process-based snowmelt modeling: Does it require more input data than temperature-index modeling? 
@@ -62,4 +66,10 @@ Journal of Hydrology 300(1-4): 65-75
 }
 \author{
 Josephine Archibald, M. Todd Walter
+}
+\examples{
+##  
+data(OwascoInlet)
+sm <- SnowMelt(Date=OwascoInlet$date, precip_mm=OwascoInlet$P_mm, Tmax_C=OwascoInlet$Tmax_C, Tmin_C=OwascoInlet$Tmin_C, lat_deg=42)
+summary(sm)
 }

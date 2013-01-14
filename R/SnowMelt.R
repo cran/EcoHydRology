@@ -27,8 +27,7 @@ SnowMelt<-function(Date, precip_mm, Tmax_C, Tmin_C, lat_deg, slope=0, aspect=0, 
 	
 	SnowTemp<-rep(0,length(precip_m)) 	# Degrees C
 	rhos<-SatVaporDensity(SnowTemp)	# 	vapor density at surface (kg/m3)
-	rhoa<-SatVaporDensity(Tav)		#	vapor density of atmoshpere (kg/m3) 
-						#Note, this differs from the paper, which uses Tmin	
+	rhoa<-SatVaporDensity(Tmin_C)		#	vapor density of atmoshpere (kg/m3) 
 	SnowWaterEq<-vector(length=length(precip_mm))
 	SnowWaterEq[1]<-startingSnowDepth_m/10	##	Assume snow is 10% water
 	TE<-rep(SurfEmissiv,length(precip_mm))

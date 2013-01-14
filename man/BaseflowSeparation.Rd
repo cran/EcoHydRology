@@ -16,7 +16,7 @@ BaseflowSeparation(streamflow, filter_parameter = 0.925, passes = 3)
 A vector containing streamflow values
 }
   \item{filter_parameter}{
-The value recommended by Chapman (1991) is 0.925, however, the user might want to play with this value (0.9-0.95)
+The value recommended by Nathan and McMahon (1990) is 0.925, however, the user might want to play with this value (0.9-0.95)
 }
   \item{passes}{
 The number of times you want the filter to pass over your data.  1-3
@@ -27,8 +27,9 @@ This will return a 2 column data frame with nrow = length of input streamflow da
 baseflow, while the second contains quickflow, both in the same units as the input.  
 }
 \references{
-Chapman, TG.  1991.  Comment on "Evaluation of Automated Techniques for Base Flow and Recession Analysis"
-by R.J. Nathan and T.A. McMahon.  Water Resources Research, Vol. 27, No 7. p. 1783-1784
+Lyne, V. D. and M. Hollick (1979). Stochastic time-variable rainfall-runoff modelling. Hydrology and Water Resources Symposium, Perth, Institution of Engineers, Australia.
+
+Nathan, R. J. and T. A. McMahon (1990). "Evaluation of automated techniques for base flow and recession analysis." Water Resources Research 26(7): 1465-1473.
 }
 \author{
 Josephine Archibald
