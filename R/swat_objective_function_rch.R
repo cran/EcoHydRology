@@ -8,11 +8,11 @@ function (x, calib_range, calib_params, flowgage, rch,save_results=F)
     dir.create(tmpdir)
     file.copy(list.files(),tmpdir)
     setwd(tmpdir)
-    system("rm output.*")
+    file.remove(list.files(pattern="output."))
     alter_files(calib_params)
     libarch = if (nzchar(version$arch)) paste("libs", version$arch, sep = "/") else "libs"
     swatbin <- "rswat2005.exe"
-    system(paste(path.package("SWATmodel"), libarch, swatbin, sep = "/"))
+    system(shQuote(paste(path.package("SWATmodel"), libarch, swatbin, sep = "/")))
     start_year = read.fortran(textConnection(readLines("file.cio")[9]), "f20")
     test = readLines(file("output.rch"))
     rchcolname = sub(" ", "", (substr(test[9], 50, 61)))

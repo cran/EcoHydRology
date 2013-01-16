@@ -1,4 +1,4 @@
-f1ba0b1c3a9fe2153c83d20b20103ca7 *DESCRIPTION
+791cf74ea72f3b816f3407b17e04a178 *DESCRIPTION
 a5a4a54aa365f2e272bed2e5fd505234 *NAMESPACE
 1a2eec07ed0496a2953b9048805ad312 *R/AtmosphericEmissivity.R
 5b438f9e459dae6c9b576e0012bca448 *R/BaseflowSeparation.R
@@ -11,7 +11,7 @@ e893a09485f3de2c6e520cbdfbfd48f3 *R/GroundHeat.R
 8dce99ee3deab05682e4e1a5c213817e *R/PET_fromTemp.R
 b074435ef1a926e33d94b77cd7b9cbbb *R/PotentialSolar.R
 15c16e8fb1ee7fbaf28eae187e5fc085 *R/RainHeat.R
-db49aba766408e5c7e5782a5e440eeb2 *R/SWAT2005.R
+08e2c59c5944604cf8908197c864085d *R/SWAT2005.R
 f8596451c265ea6dea89c55bc990c042 *R/SatVapPresSlope.R
 5d6d3d8abd1bd8ea1a945c81f0073a6f *R/SatVaporDensity.R
 79aada597da5b2892a79fb9d7b007ba0 *R/SatVaporPressure.R
@@ -21,7 +21,7 @@ ff6856fb02c571124877a519f9236c00 *R/SoilStorage.r
 57457df105eba9ced1941f4caec531ad *R/Solar.R
 54a6e5277ca5f2094fcf1fc845056d0c *R/alter_files.R
 f07b1c7e65feac8cd24eabfa45f1ef69 *R/build_gsod_forcing_data.R
-6023c5e1a07b43667cbeecba01d5ff75 *R/calib_swat_ex.R
+f6280cd0488a1d8b652a2caf274516e0 *R/calib_swat_ex.R
 a08137b99b967de81d63cf9ffa80b428 *R/declination.R
 f8453d2bbfcc2c2a65e1f8862955f3aa *R/get_cfsr_latlon.R
 5e9a240306d4f51d31cbfc5e4f16bedc *R/get_gsod_stn.R
@@ -31,9 +31,9 @@ aee51e8c205722681f517e9db5f2da60 *R/hydrograph.R
 49d662197b0f6328f4c2d3216829ca23 *R/slopefactor.R
 eeec0a37fb447f6444b44eb55a22074a *R/solarangle.R
 a53e20f9b83e785ce72976b8df476f01 *R/solaraspect.R
-1fe9e89eefd83b994679299566953856 *R/swat_objective_function.R
-c03636dde92d1a5456f1a8c8f4bd8116 *R/swat_objective_function_rch.R
-0fd78a7b60edb777f2a5bd4c7c6e2ef0 *R/testSWAT2005.R
+ae1047764a0b46e1c7e102413cf7f641 *R/swat_objective_function.R
+ef5072cf6299962ff66edd0a57603d75 *R/swat_objective_function_rch.R
+70cbc5d796e3217e0a3b812e3b4ad594 *R/testSWAT2005.R
 4cdfc66968524251b173f9c84b7191c9 *R/transmissivity.R
 a4a13cd3b9068a0132dfc73afc88e24d *data/GSOD_history.rda
 ce8be4697258dfac58d5545ca8224767 *data/OwascoInlet.rda
@@ -41,7 +41,7 @@ ce8be4697258dfac58d5545ca8224767 *data/OwascoInlet.rda
 a711bbfc88ad27d53b184f47e4cd4514 *data/swat_general.rda
 8c488a3bccce9d9c01c93773dd445be8 *man/AtmosphericEmissivity.Rd
 c1818e8372b474eb911deade77eb82d5 *man/BaseflowSeparation.Rd
-611698387c939ca44edd96dd1cf594c9 *man/EcoHydRology-package.Rd
+c06df6b058cf6c20418c3b1964397dd2 *man/EcoHydRology-package.Rd
 780f4fdb1bd386a0c289ba228167ecba *man/EnvirEnergy.Rd
 02bb5163900c11d6a7f2a54f35320087 *man/EstCloudiness.Rd
 917134bd9d6ec124b5eedbe25d0e0943 *man/EvapHeat.Rd

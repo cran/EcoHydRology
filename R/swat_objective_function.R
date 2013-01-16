@@ -1,12 +1,12 @@
 swat_objective_function<-function(x,calib_range,calib_params,flowgage){
 
 calib_params$current<-x
-system("rm output.*")
+file.remove(list.files(pattern="output."))
 alter_files(calib_params)
 
 libarch = if (nzchar(version$arch)) paste("libs", version$arch, sep = "/") else "libs"
 swatbin <- "rswat2005.exe"
-system(paste(path.package("SWATmodel"), libarch, swatbin, sep = "/"))
+system(shQuote(paste(path.package("SWATmodel"), libarch, swatbin, sep = "/")))
 
 start_year=read.fortran(textConnection(readLines("file.cio")[9]),"f20")
 test=readLines(file("output.rch"))
