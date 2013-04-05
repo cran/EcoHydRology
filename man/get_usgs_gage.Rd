@@ -23,7 +23,7 @@ get_usgs_gage(flowgage_id,begin_date="1979-01-01",end_date="2013-01-01")
 }
 }
 \value{
-\item{area}{Is the area above the gage}
+\item{area}{The area above the gage [km2]}
 \item{declat}{Decimal Lat}
 \item{declon}{Decimal Lon}
 \item{flowdata}{Dataframe with the historical flow data - flow is in cubic meters per day}

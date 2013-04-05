@@ -5,32 +5,25 @@
 Saturated Vapor Density
 }
 \description{
-Saturated vapor density at a given temperature
+Saturated vapor density [kg/m3] at a given temperature
 
 }
 \usage{
-SatVaporDensity(temp)
+SatVaporDensity(T_C)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{temp}{
+  \item{T_C}{
  temperature [C]
 }
 }
+\references{
+Campbell, Gaylon S. An Introduction to Environmental Biophysics.  New York: Springer-Verlag, 1977.
+}
 \author{
-M. Todd Walter
+Josephine Archibald, M. Todd Walter
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function(temp){
-# saturated vapor density at a given temperature
-
-#temp: temperature [C]
-
-return(exp((16.78*temp-116.9)/(temp+273.3))*1/((273.15+temp)*0.4615))
+SatVaporDensity(seq(-5,40, by=5))
   }
-}
+

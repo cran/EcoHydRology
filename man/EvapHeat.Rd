@@ -2,66 +2,43 @@
 \alias{EvapHeat}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Evaporative heat exchange between a surface and the surrounding air
+Evaporative heat exchange between a wet surface and the surrounding air
 }
 \description{
-Evaporative heat exchange between a surface and the surrounding air;
-usually cooling [kJ m-2 d-1]
-this function is only intended for wet surfaces, i.e., it assumes the vapor density at the surface is the saturation vapor density
+Evaporative heat exchange between a surface and the surrounding air [kJ m-2 d-1]. This function is only intended for wet surfaces, i.e., it assumes the vapor density at the surface is the saturation vapor density
 
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-EvapHeat(surftemp, airtemp, relativehumidity, Tn, wind)
+EvapHeat(surftemp, airtemp, relativehumidity=NULL, Tn=NULL, wind=2)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{surftemp}{
  surface temperature [C]
 }
   \item{airtemp}{
- average dailiy air temperature [C]
+ average daily air temperature [C]
 }
   \item{relativehumidity}{
- relative humidity [-]
+ relative humidity, 0-1 [-]
 }
   \item{Tn}{
- minimum dailiy air temperature, assumed to be the dewpoint temperature [C]
+ minimum dailiy air temperature, assumed to be dew point temperature if relativehumidity unknown [C]
 }
   \item{wind}{
  average daily windspeed [m/s]
 }
 }
+\references{
+Campbell, Gaylon S. An Introduction to Environmental Biophysics.  New York: Springer-Verlag, 1977.
+}
 \author{
 M. Todd Walter
 }
-
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function(surftemp,airtemp,relativehumidity,Tn,wind){
-# evaporative heat exchange between a surface and the surrounding air; usually cooling [kJ m-2 d-1]
-# this function is only intended for wet surfaces, i.e., it assumes the vapor density at the surface is the saturation vapor density
-
-#surftemp: surface temperature [C]
-#airtemp: average dailiy air temperature [C]
-#relativehumidity: relative humidity [-]
-#Tn: minimum dailiy air temperature, assumed to be the dewpoint temperature [C]
-#wind: average daily windspeed [m/s]
-
-#NOTE: this function will use the relative humidity to esimate air vapor density if the value passed is greater than zero (0)
-# If the relative humidity is less than one, we will assume the minimum daily air temperature is approsimate the dew point temp.
-
-windfunction<-5.3*(1+wind)
-
-if(relativehumidity>0){airvapordensity<-relativehumidity*SatVaporDensity(airtemp)}
-else{airvapordensity<-SatVaporDensity(Tn)}
-
-surfacevapordensity<-SatVaporDensity(surftemp)
-
-return(86400*windfunction*(surfacevapordensity-airvapordensity))
-  }
+\note{
+This function will use the relative humidity to esimate air vapor density if the value passed is between 0-1.  Otherwise, it will assume the minimum daily air temperature is approximately the dew point temp.
 }
+\examples{
+	EvapHeat(surftemp=15, airtemp=5, relativehumidity=0.7)
+ }
+

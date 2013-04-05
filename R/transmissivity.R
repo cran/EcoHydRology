@@ -28,7 +28,7 @@ transmissivity<-function(Tx,Tn, A=0.75, C=2.4, opt="1day", JD=NULL){
 		avDeltaT<-mean(dT)
 	} else {
 		avDeltaT[1:14]<-mean(dT[1:30])
-		avDeltaT[(len-14:len)]<-mean(dT[(len-30:len)])
+		avDeltaT[(len-14):len]<-mean(dT[(len-30):len])
 		for (i in 15:(len-15)){
 			avDeltaT[i]<-mean(dT[(i-14):(i+15)])
 		}

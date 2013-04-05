@@ -16,7 +16,7 @@ hydrograph(input = matrix(ncol = 2, nrow = 2), streamflow = input[, 2], timeSeri
 This is a data frame with at least two columns of data   
 First column:  Must be a time/date series
 Second column:  If including precip, precip. Otherwise, streamflow - AND do not include any other columns
-Third column: (Only if precip not included) First streamflow dataset 
+Third column: (Only include if precip is in the second column) First streamflow dataset 
 Forth column:  (optional) Second streamflow dataset
 }
   \item{streamflow}{

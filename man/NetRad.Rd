@@ -2,67 +2,62 @@
 \alias{NetRad}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Title to be replaced
 Daily Net Radiation
 }
 \description{
 Daily net radiation [kJ m-2 d-1]
 }
 \usage{
-NetRad(lat, Jday, Tx, Tn, albedo, forest, slope, aspect, airtemp, cloudiness, surfemissivity, surftemp)
+NetRad(lat, Jday, Tx, Tn, albedo = 0.18, forest = 0, slope = 0, aspect = 0, airtemp = (Tn+Tx)/2, cloudiness = "Estimate", surfemissivity = 0.97, surftemp = (Tn+Tx)/2, units = "kJm2d")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{lat}{
-%%     ~~Describe \code{lat} here~~
+latitude.  Default is radians, but will automatically convert from degrees if value is larger than pi/2 or less than -pi/2
 }
   \item{Jday}{
-%%     ~~Describe \code{Jday} here~~
+Day of the year [-]
 }
   \item{Tx}{
-%%     ~~Describe \code{Tx} here~~
+Max temperature [C]
 }
   \item{Tn}{
-%%     ~~Describe \code{Tn} here~~
+Min temperature [C]
 }
   \item{albedo}{
-%%     ~~Describe \code{albedo} here~~
+Albedo (0-1) [-]
 }
   \item{forest}{
-%%     ~~Describe \code{forest} here~~
+Forest canopy or shade cover (0-1) [-]
 }
   \item{slope}{
-%%     ~~Describe \code{slope} here~~
+Slope [radians]
 }
   \item{aspect}{
-%%     ~~Describe \code{aspect} here~~
+Ground aspect [radians from north]
 }
   \item{airtemp}{
-%%     ~~Describe \code{airtemp} here~~
+Average air temp [C]
 }
   \item{cloudiness}{
-%%     ~~Describe \code{cloudiness} here~~
+Cloudiness percentage (0-1) [-] 
+Default value will estimate cloudiness based on daily temperature difference. 
 }
   \item{surfemissivity}{
-%%     ~~Describe \code{surfemissivity} here~~
+Surface emissivity [-]
 }
   \item{surftemp}{
-%%     ~~Describe \code{surftemp} here~~
+Surface temperature [C]
 }
+  \item{units}{
+Units of the result.  Defaults to "kJm2d" which returns result in kJ/m2/d, the other option is "Wm2", which will make output in W/m2
+}
+
 }
 \author{
-M. Todd Walter
+M. Todd Walter, Josephine Archibald
 }
 
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function(lat, Jday, Tx, Tn, albedo, forest, slope, aspect, airtemp, cloudiness, surfemissivity, surftemp){
-# daily net radiation [kJ m-2 d-1]
-
-return(Solar(lat,Jday,Tx,Tn,albedo,forest,slope,aspect)+Longwave(AtmosphericEmissivity(airtemp,cloudiness),airtemp)-Longwave(surfemissivity,surftemp))
-  }
+NetRad(42.4*pi/180, Jday=55, Tx=2, Tn=(-3))
 }

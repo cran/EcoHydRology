@@ -2,14 +2,14 @@
 \alias{PET_fromTemp}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Potential Evapotranspiration
+Priestley-Taylor Potential Evapotranspiration from temperature
 }
 \description{
 Calculates potential Evapotranspiration (in meters) based on the Priestley-Taylor equation (1972).  We use an estimation of
 net radiation based on temperature data.
 }
 \usage{
-PET_fromTemp(Jday, Tmax_C, Tmin_C, lat_radians, AvgT = (Tmax_C + Tmin_C)/2, albedo = 0.18, TerrestEmiss = 0.97, aspect = 0, slope = 0, forest = 0)
+PET_fromTemp(Jday, Tmax_C, Tmin_C, lat_radians, AvgT = (Tmax_C + Tmin_C)/2, albedo = 0.18, TerrestEmiss = 0.97, aspect = 0, slope = 0, forest = 0, PTconstant=1.26)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -35,13 +35,16 @@ Average daily temperature (degrees C) (if not known, will be taken as the averag
 (-) Surface Emissivity - defaults to 0.97
 }
   \item{aspect}{
-(-) Surface aspect
+(radians) Surface aspect
 }
   \item{slope}{
-(-) average slope
+(radians) average slope
 }
   \item{forest}{
-(-) Forest cover.  Always set to zero for landscape-wide processes.  Only change if calculating PET under a canopy
+(-) Forest or shade cover (0-1).  This modifies the amount of solar radiation reaching the location of interest.  It should always set to zero for landscape-wide processes regardless of the amount of forest present.  Only change this if calculating PET under a canopy.
+}
+  \item{PTconstant}{
+(-) Priestley-Taylor Constant, often 1.26
 }
 }
 \value{
@@ -52,6 +55,8 @@ PET (potential evapotranspiration) in m
 %% ...
 }
 \references{
+Archibald JA, Walter MT.  (in review)  Towards a physically-based potential evapotranspiration estimate based on temperature.  JAWRA
+
 Priestley and Taylor (1972).  On the assessment of surface heat flux and evaporation using large-scale parameters. 
 Mon. Weath. Rev. 100: 81-92
 }
@@ -76,5 +81,4 @@ detach(OwascoInlet)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+

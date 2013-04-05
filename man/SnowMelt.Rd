@@ -8,12 +8,12 @@ Snow Melt Calculator
 Calculates snow pack accumulation and melt
 }
 \usage{
-SnowMelt(Date, precip_mm, Tmax_C, Tmin_C, lat_deg, slope = 0, aspect = 0, tempHt = 1, windHt = 2, groundAlbedo = 0.25, SurfEmissiv = 0.95, windSp = 2, forest = 0, startingSnowDepth_m = 0)
+SnowMelt(Date, precip_mm, Tmax_C, Tmin_C, lat_deg, slope = 0, aspect = 0, tempHt = 1, windHt = 2, groundAlbedo = 0.25, SurfEmissiv = 0.95, windSp = 2, forest = 0, startingSnowDepth_m = 0, startingSnowDensity_kg_m3=450)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{Date}{
-Vector of dates (class Date or character) in this format: "/%Y-/%m-/%d"
+Vector of dates (class Date or character) in this format: Y-m-d
 }
   \item{precip_mm}{
 Precipitation in mm
@@ -40,24 +40,27 @@ height of temperature measurements (m)
 height of wind measurements (m)
 }
   \item{groundAlbedo}{
-Ground Albedo (-)
+Ground Albedo, 0-1 (-)
 }
   \item{SurfEmissiv}{
-Surface Emissivity (-)
+Surface Emissivity, 0-1 (-)
 }
   \item{windSp}{
 Wind speed - either a vector of measured values or a single value of average wind speed for the site (m/s)
 }
   \item{forest}{
-Forest cover - use this only when determining snowmelt under a canopy (-)
+Forest cover - use this only when determining snowmelt under a canopy, 0-1 (-)
 }
   \item{startingSnowDepth_m}{
 The depth of the snow pack initially (m)
 }
+\item{startingSnowDensity_kg_m3}{
+The density of snow on the ground on the first day (kg/m3)
+}
 }
 \value{
-This will return an 8 column data frame with nrow = length of input streamflow data.  Column names are :
-Date, MaxT_C, MinT_C, Rain_mm, SnowfallWatEq_mm, SnowMelt_mm, NewSnow_m, SnowDepth_m 
+This will return a 10 column data frame with nrow = length of input weather data.  Column names are :
+Date, MaxT_C, MinT_C, Precip_mm, Rain_mm, SnowfallWatEq_mm, SnowMelt_mm, NewSnow_m, SnowDepth_m, SnowWaterEq_mm 
 }
 \references{
 Walter, M.T. , E.S. Brooks, D.K. McCool, L.G. King, M. Molnau, J. Boll. 2005. 
