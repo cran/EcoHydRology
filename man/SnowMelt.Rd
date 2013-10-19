@@ -8,7 +8,10 @@ Snow Melt Calculator
 Calculates snow pack accumulation and melt
 }
 \usage{
-SnowMelt(Date, precip_mm, Tmax_C, Tmin_C, lat_deg, slope = 0, aspect = 0, tempHt = 1, windHt = 2, groundAlbedo = 0.25, SurfEmissiv = 0.95, windSp = 2, forest = 0, startingSnowDepth_m = 0, startingSnowDensity_kg_m3=450)
+SnowMelt(Date, precip_mm, Tmax_C, Tmin_C, lat_deg, slope = 0,
+ aspect = 0, tempHt = 1, windHt = 2, groundAlbedo = 0.25,
+ SurfEmissiv = 0.95, windSp = 2, forest = 0, startingSnowDepth_m = 0,
+ startingSnowDensity_kg_m3=450)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -73,6 +76,7 @@ Josephine Archibald, M. Todd Walter
 \examples{
 ##  
 data(OwascoInlet)
-sm <- SnowMelt(Date=OwascoInlet$date, precip_mm=OwascoInlet$P_mm, Tmax_C=OwascoInlet$Tmax_C, Tmin_C=OwascoInlet$Tmin_C, lat_deg=42)
+sm <- SnowMelt(Date=OwascoInlet$date, precip_mm=OwascoInlet$P_mm,
+ Tmax_C=OwascoInlet$Tmax_C, Tmin_C=OwascoInlet$Tmin_C, lat_deg=42)
 summary(sm)
 }

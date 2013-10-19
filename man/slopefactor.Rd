@@ -27,22 +27,8 @@ slopefactor(lat, Jday, slope, aspect)
 }
 }
 \author{
-M. Todd Walter
+M. Todd Walter, J. Archibald
 }
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function(lat,Jday,slope,aspect){
-# slopefactor: adjusts solar radiation for land slope and aspect relative to the sun, 1=level ground
-
-#lat: latitdue [rad]
-#Jday: Julian date or day of the year [day]
-#slope: slope of the ground [rad]
-#aspect: ground aspect [rad from north]
-
-return(cos(slope)-sin(slope)*1/tan(solarangle(lat,Jday))*cos(aspect-solaraspect(lat,Jday)))
-  }
+\references{
+Monteith and Unsworth (1990) Principles of Environmental Physics, 2nd ed. Chapter 5 
 }

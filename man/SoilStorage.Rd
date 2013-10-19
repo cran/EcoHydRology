@@ -43,15 +43,5 @@ SoilStorageSWAT
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function(S.avg,field.capacity, soil.water.content, porosity){
-w2<-(log(1-(field.capacity/(1-0.4348*S.avg/(2.381*S.avg)))-field.capacity)-log(1-(porosity/(1-2.54/(2.381*S.avg)))-porosity
-))/(porosity-field.capacity)##
-w1<-log(1-field.capacity/(1-0.4348*S.avg/(2.381*S.avg))-field.capacity)+w2*field.capacity
-return(2.381*S.avg*(1-(soil.water.content/(soil.water.content+exp(w1-w2*soil.water.content)))))
-  }
+SoilStorage(S_avg=120, field_capacity=0.2, soil_water_content=0.1, porosity=0.3)
 }

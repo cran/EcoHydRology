@@ -1,6 +1,6 @@
 alter_files <-
 function(change_params){
-library(operators)
+#library(operators)
 filetype=NULL
 for(ft in unique(change_params$filetype)){
         print(ft)

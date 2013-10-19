@@ -9,5 +9,5 @@ Solar <-  function (lat, Jday, Tx, Tn, albedo=0.2, forest=0, slope=0, aspect = 0
 	
 	if (units == "kJm2d") convert <- 1 else convert <- 86.4  # can convert to W/m2
     return( signif((1 - albedo) * (1 - forest) * transmissivity(Tx, Tn) * 
-        PotentialSolar(lat, Jday) * slopefactor(lat, Jday, slope, aspect) / convert , 2 ))
+        PotentialSolar(lat, Jday) * slopefactor(lat, Jday, slope, aspect) / convert , 5 ))
 }

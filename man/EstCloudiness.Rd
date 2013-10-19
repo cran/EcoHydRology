@@ -8,7 +8,8 @@ Estimated Cloudiness
 Estimates the cloudiness of the atmosphere by scaling to atmospheric transmissivity
 }
 \usage{
-EstCloudiness(Tx=(-999), Tn=(-999), trans=NULL, transMin = 0.15, transMax = 0.75, opt = "linear")
+EstCloudiness(Tx=(-999), Tn=(-999), trans=NULL, transMin = 0.15, 
+transMax = 0.75, opt = "linear")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

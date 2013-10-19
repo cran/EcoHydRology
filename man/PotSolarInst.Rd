@@ -9,7 +9,9 @@ Instantaneous Potential Solar Radiation
 Potential Solar Radiation at a particular time of day.  Defaults to W/m2, can also report in kJ/m2/d if units set to kJ/m2/d
 }
 \usage{
-PotSolarInst(Jday, hour = 12, lat = 42.44 * pi/180, sunrise = NULL, sunset = NULL, SolarNoon = mean(c(sunrise, sunset)), units = "Wm2", latUnits = "unknown")
+PotSolarInst(Jday, hour = 12, lat = 42.44 * pi/180, sunrise = NULL,
+ sunset = NULL, SolarNoon = mean(c(sunrise, sunset)), units = "Wm2",
+ latUnits = "unknown")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

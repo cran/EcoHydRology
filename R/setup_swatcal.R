@@ -1,6 +1,6 @@
 setup_swatcal <-
 function(change_params){
-library(operators)
+
 for(ft in unique(change_params$filetype)){
         print(ft)
         files=list.files(,paste(ft,"$",sep=""))

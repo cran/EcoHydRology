@@ -22,8 +22,8 @@ Cloudiness: fraction of the sky covered in clouds [-]
 Vapor Pressure :  [kPa]
 }
 \item{opt}{
-option: either "linear" for a linear relationshipd between clear sky emissivity and temperature, or
-"Brutseart" to use Brutseart's(1975) clear sky emissivity formulation - this requires input for vapor pressure
+option: either "linear" for a linear relationship between clear sky emissivity and temperature, or
+"Brutsaert" to use Brutsaert's(1975) clear sky emissivity formulation - this requires input for vapor pressure
 }
 }
 \value{
@@ -34,7 +34,7 @@ Campbell, G. S., Norman, J.M., 1998. An Introduction to
 Environmental Biophysics, second ed., Springer, New York, 
 p. 286.
 
-Brutseart, W. (1975 On a Derivable Formula for Long-Wave Radiation From Clear Skies.  Water Resources Research, 11(5) 742-744
+Brutsaert, W. (1975 On a Derivable Formula for Long-Wave Radiation From Clear Skies.  Water Resources Research, 11(5) 742-744
 
 }
 \author{

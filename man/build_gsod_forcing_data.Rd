@@ -23,11 +23,13 @@ addis
 }
 ## The function is currently defined as
 function(){
-  tmpdir=readline("Please enter a temp directory where you stored the *.op.gz datafiles? \n")
+  tmpdir=readline("Please enter a temp directory where you stored the
+  *.op.gz datafiles? \n")
   files=dir(tmpdir,"*.op.gz",full.names=T)
   start_year=min(substr(files,nchar(files)-9,nchar(files)-6))
   end_year=max(substr(files,nchar(files)-9,nchar(files)-6))
-  alldates=data.frame(fdate=seq(from=as.Date(paste(start_year,"-01-01",sep="")), to=as.Date(paste(end_year,"-12-31",sep="")), by=1))
+  alldates=data.frame(fdate=seq(from=as.Date(paste(start_year,"-01-01",
+  sep="")), to=as.Date(paste(end_year,"-12-31",sep="")), by=1))
 
   stn=matrix()
   tmin=matrix()
@@ -44,7 +46,8 @@ function(){
         tmax<-c(tmax,as.numeric(as.character(substring(tmpstring,103,108))))
         tmin<-c(tmin,as.numeric(as.character(substring(tmpstring,111,116))))
         ppt<-c(ppt,as.numeric(as.character(substring(tmpstring,119,123))))
-        fdate<-c(fdate,as.Date(yearmoda<-substring(tmpstring,15,22),"\%Y\%m\%d"))
+        fdate<-c(fdate,as.Date(yearmoda<-substring(tmpstring,15,22),
+		"\%Y\%m\%d"))
   }
 
   stn<-as.numeric(stn)
@@ -52,7 +55,8 @@ function(){
   tmax<-as.numeric(tmax)
   tmin<-as.numeric(tmin)
   fdate<-as.Date(as.numeric(fdate), origin="1970-01-01")
-  forcing=data.frame(stn=stn,ppt=ppt,tmax=tmax,tmin=tmin, fdate=as.Date(fdate))
+  forcing=data.frame(stn=stn,ppt=ppt,tmax=tmax,tmin=tmin,
+  fdate=as.Date(fdate))
   forcing=na.omit(forcing)
   forcing=merge(alldates,forcing,all=TRUE)
 
