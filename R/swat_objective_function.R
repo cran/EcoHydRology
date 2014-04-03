@@ -5,7 +5,7 @@ file.remove(list.files(pattern="output."))
 alter_files(calib_params)
 
 libarch = if (nzchar(version$arch)) paste("libs", version$arch, sep = "/") else "libs"
-swatbin <- "rswat2005.exe"
+swatbin <- "rswat2012.exe"
 system(shQuote(paste(path.package("SWATmodel"), libarch, swatbin, sep = "/")))
 
 start_year=read.fortran(textConnection(readLines("file.cio")[9]),"f20")

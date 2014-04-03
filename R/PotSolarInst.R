@@ -6,10 +6,9 @@ function(Jday, hour = 12, lat = 42.44*pi/180, sunrise = NULL, sunset = NULL, Sol
 #Either sunrise and sunset times, or SolarNoon is needed   [in hours, 0-24]
 
 if ((abs(lat) > pi/2 & latUnits == "unknown") | latUnits == "degrees" ){
-print("Latitude in degrees")
 lat <- lat*pi/180
 } else if (latUnits == "unknown"){
-print("Latitude assumed to be in radians, if using degrees, please set latUnits = 'degrees'")
+warning("in PotSolarInst call: Latitude assumed to be in radians, if using degrees, please set latUnits = 'degrees'")
 } 
 
 

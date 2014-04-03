@@ -61,9 +61,12 @@ PET (potential evapotranspiration) in m
 %% ...
 }
 \references{
-Archibald JA, Walter MT.  (in review)  Towards a physically-based potential evapotranspiration estimate based on temperature.  JAWRA
+Archibald, J.A. and M. T. Walter, 2013.  Do energy-based PET models require more input data than T-based models? - An evaluation at four humid FluxNet sites. Journal of the American Water Resources Association (JAWRA) 
 
-Priestley and Taylor (1972).  On the assessment of surface heat flux and evaporation using large-scale parameters. 
+Brutsaert, W., 1975. On a Derivable Formula for Long-Wave Radiation from Clear Skies. 
+Water Resources Research 11(5):742-744.
+
+Priestley and Taylor, 1972.  On the assessment of surface heat flux and evaporation using large-scale parameters. 
 Mon. Weath. Rev. 100: 81-92
 }
 \author{

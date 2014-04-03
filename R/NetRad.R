@@ -4,5 +4,5 @@ NetRad <- function (lat, Jday, Tx, Tn, albedo = 0.18, forest = 0, slope = 0, asp
                 cloudiness <- EstCloudiness(Tx, Tn)
         }
     if (units == "kJm2d") convert <- 1 else convert <- 86.4
-        return( signif((Solar(lat, Jday, Tx, Tn, albedo, forest, slope, aspect) + Longwave(AtmosphericEmissivity(airtemp, cloudiness, AEparams$vp, AEparams$opt),airtemp) - Longwave(surfemissivity, surftemp)) / convert , 5) )
+        return( signif((Solar(lat, Jday, Tx, Tn, albedo, forest, slope, aspect, printWarn=FALSE) + Longwave(AtmosphericEmissivity(airtemp, cloudiness, AEparams$vp, AEparams$opt),airtemp) - Longwave(surfemissivity, surftemp)) / convert , 5) )
 }

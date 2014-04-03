@@ -52,7 +52,7 @@ Surface Emissivity, 0-1 (-)
 Wind speed - either a vector of measured values or a single value of average wind speed for the site (m/s)
 }
   \item{forest}{
-Forest cover - use this only when determining snowmelt under a canopy, 0-1 (-)
+Forest cover (shade) - use this only when determining snowmelt under a canopy, 0-1 (-)
 }
   \item{startingSnowDepth_m}{
 The depth of the snow pack initially (m)
@@ -72,6 +72,10 @@ Journal of Hydrology 300(1-4): 65-75
 }
 \author{
 Josephine Archibald, M. Todd Walter
+}
+\section{Warning}{
+This function cannot handle NA values in input, and can only be run for continuous daily data.
+For data-sets missing values, run discontinuous segments separately.
 }
 \examples{
 ##  

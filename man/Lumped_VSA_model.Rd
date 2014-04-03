@@ -103,6 +103,8 @@ Also, note that precipitation values are actually Rain + Snowmelt (mm).  Users c
 Returns a data frame with modeled streamflow, baseflow, ET, and maximum wetness class generating runoff for all dates.  Soil water and other modeled intermediate results are also returned.  All flow values (modeled_flow, baseflow, OverlandFlow, ShallowInterflow, totQ, quickflow_combined, impervRunoff, excess) are in depth of flow per day (mm/d)
 }
 \references{
+Archibald, J.A., B.P. Buchanan, D.R. Fuka, C.B Georgakakos, S.W. Lyon, M.T. Walter. A simple, regionally parameterized model for predicting nonpoint source areas in the Northeastern US. Submitted to Journal of Hydrology: Regional Studies  
+
 Schneiderman EM. Steenhuis TS, Thongs DJ, Easton ZM, Zion MS, Neal AL, Mendoza GF, Walter MT.  2007.  Incorporating variable source area hydrology into a curve-number-based watershed model.  Hydrological Processes.  21: 3420-3430
 
 Shaw, SB, MT Walter.  2009.  Improving runoff risk estimates: Formulating runoff as a bivariate process using the SCS curve number method.  Water Resources Research.  45
@@ -121,6 +123,12 @@ This function is under development and might change substantially in further ver
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
+\section{Warning}{
+This function cannot handle NA values in input, and can only be run for a daily time-step.
+If Tx < Tn for any day, this will produce an error.
+Currently, the crop coefficients used to estimate PET are specific for deciduous northeastern USA.
+}
+
 
 \seealso{
 PET_fromTemp

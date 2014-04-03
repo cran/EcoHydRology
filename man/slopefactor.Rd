@@ -6,7 +6,7 @@ Slope Factor
 
 }
 \description{
-Adjusts solar radiation for land slope and aspect relative to the sun, 1=level ground
+Adjusts solar radiation for land slope and aspect relative to the sun, 0=level ground
 }
 \usage{
 slopefactor(lat, Jday, slope, aspect)
