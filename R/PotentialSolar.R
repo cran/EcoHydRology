@@ -8,6 +8,9 @@ function(lat,Jday){
 # solar declination [rad]
 dec<-declination(Jday)
 
-return(117500*(acos(-tan(dec)*tan(lat))*sin(lat)*sin(dec)+cos(lat)*cos(dec)*sin(acos(tan(dec)*tan(lat))))/pi)
+out<-117500*(acos(-tan(dec)*tan(lat))*sin(lat)*sin(dec)+cos(lat)*cos(dec)*sin(acos(tan(dec)*tan(lat))))/pi
+if (is.na(out)) out <- 0
+
+return(out)
 }
 
