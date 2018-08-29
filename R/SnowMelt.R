@@ -1,4 +1,4 @@
-SnowMelt<-function(Date, precip_mm, Tmax_C, Tmin_C, lat_deg, slope=0, aspect=0, tempHt=1, windHt=2, groundAlbedo=0.25, 		SurfEmissiv=0.95, windSp=2, forest=0, startingSnowDepth_m=0, startingSnowDensity_kg_m3=450){	
+SnowMelt<-function(Date, precip_mm, Tmax_C, Tmin_C, lat_deg, slope=0, aspect=0, tempHt=1, windHt=2, groundAlbedo=0.25, SurfEmissiv=0.95, windSp=2, forest=0, latUnits="unknown", startingSnowDepth_m=0, startingSnowDensity_kg_m3=450){	
 ## Constants :
 	WaterDens <- 1000			# kg/m3
 	lambda <- 3.35*10^5			# latent heat of fusion (kJ/m3)
@@ -72,7 +72,7 @@ SnowMelt<-function(Date, precip_mm, Tmax_C, Tmin_C, lat_deg, slope=0, aspect=0, 
 			Albedo[i] <- max(groundAlbedo, Albedo[i-1]+(groundAlbedo-0.85)/10)
 		} else Albedo[i] <- 0.35-(0.35-0.98)*exp(-1*(0.177+(log((-0.3+0.98)/(Albedo[i-1]-0.3)))^2.16)^0.46)
 
-		S[i] <- Solar(lat=lat,Jday=JDay[i], Tx=Tmax_C[i], Tn=Tmin_C[i], albedo=Albedo[i-1], forest=forest, aspect=aspect, slope=slope, printWarn=FALSE)
+		S[i] <- Solar(lat=lat,Jday=JDay[i], Tx=Tmax_C[i], Tn=Tmin_C[i], albedo=Albedo[i-1], forest=forest, aspect=aspect, slope=slope, latUnits=latUnits, printWarn=FALSE)
 
 		if(SnowDepth[i-1] > 0) TE[i] <- 0.97 	#	(-) Terrestrial Emissivity
 		if(SnowWaterEq[i-1] > 0 | NewSnowWatEq[i] > 0) {
