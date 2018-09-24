@@ -8,3 +8,9 @@ import(
   DEoptim,
   XML
 )
+
+importFrom("graphics", "axis", "barplot", "lines", "mtext", "par",
+           "plot")
+importFrom("stats", "na.omit", "quantile", "runif")
+importFrom("utils", "download.file", "read.csv", "read.delim",
+           "read.fortran")

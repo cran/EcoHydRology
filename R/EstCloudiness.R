@@ -1,6 +1,6 @@
 EstCloudiness <- function (Tx=(-999), Tn=(-999), trans=NULL, transMin = 0.15, transMax = 0.75, opt = "linear") 
 {
-    suppressWarnings(if ((Tx == -999 | Tn == -999) & is.null(trans)){ 
+    suppressWarnings(if (any(Tx == -999 || Tn == -999) && is.null(trans)){ 
 		print("Error: Please enter either Max&Min temp or transmissivity")
 		} else {
 	if (is.null(trans))	trans <- transmissivity(Tx, Tn)
